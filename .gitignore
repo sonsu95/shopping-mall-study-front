@@ -34,3 +34,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# IDE
+.idea
+
+# lock files
+# After you clone the template, please delete the following parts
+pnpm-lock.yaml
