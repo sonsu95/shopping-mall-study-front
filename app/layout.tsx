@@ -4,6 +4,7 @@ import './globals.css';
 import Providers from '@/app/Proviers';
 import React from 'react';
 import MainHeader from '@/app/_components/layouts/MainHeader';
+import MainFooter from '@/app/_components/layouts/MainFooter';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,7 +26,7 @@ export default function RootLayout({
           <main>
             <Providers>{children}</Providers>
           </main>
-          <footer>footer</footer>
+          <MainFooter />
         </div>
       </body>
     </html>
