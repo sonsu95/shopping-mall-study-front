@@ -12,9 +12,9 @@ import Link from 'next/link';
 export default function LoginCard() {
   return (
     <Card
-      className="flex w-full max-w-[30rem] justify-center px-10 py-5"
+      className="flex w-full max-w-[30rem] justify-center border px-10 py-5"
       radius="sm"
-      shadow="sm"
+      shadow="none"
     >
       <CardHeader className="justify-center text-3xl font-bold">
         로그인

@@ -20,14 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex justify-center`}>
-        <div className="w-[75rem]">
-          <MainHeader />
-          <main>
-            <Providers>{children}</Providers>
-          </main>
-          <MainFooter />
-        </div>
+      <body className={`${inter.className} flex flex-col items-center`}>
+        <MainHeader />
+        <main className="w-full max-w-[75rem] pt-8">
+          <Providers>{children}</Providers>
+        </main>
+        <MainFooter />
       </body>
     </html>
   );

@@ -33,16 +33,18 @@ export default function MainHeader() {
   ];
 
   return (
-    <Navbar isBordered maxWidth="full" classNames={{ wrapper: 'px-0' }}>
+    <Navbar isBordered maxWidth="full" classNames={{ wrapper: 'px-20' }}>
       <NavbarContent justify="start">
         <NavbarBrand className="mr-4">
           <p className="hidden font-bold text-inherit sm:block">백엔샵</p>
         </NavbarBrand>
-        <NavbarContent className="gap-3">
+        <NavbarContent className="gap-5">
           {categoryLinks.map((category) => {
             return (
               <NavbarItem isActive={category.isActive}>
-                <Link href={category.path}>{category.label}</Link>
+                <Link href={category.path} className="font-semibold">
+                  {category.label}
+                </Link>
               </NavbarItem>
             );
           })}
