@@ -1,5 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+} from '@nextui-org/react';
 
 export default function MainHeader() {
   const categoryItems = [
@@ -27,26 +33,31 @@ export default function MainHeader() {
   ];
 
   return (
-    <header className="my-10 flex h-10 items-center justify-between">
-      <div className="flex gap-x-8">
-        <div className="text-5xl font-bold">백엔샵</div>
-        <nav className="flex items-center gap-x-4">
-          {categoryLinks.map(({ label, path }) => (
-            <Link key={label} className="font-medium" href={path}>
-              {label}
-            </Link>
-          ))}
-        </nav>
-      </div>
-      <div className="flex gap-x-4">
-        {userLinks.map(({ label, path }) => (
-          <div key={label}>
-            <Link className="text-xs" href={path}>
-              {label}
-            </Link>
-          </div>
-        ))}
-      </div>
-    </header>
+    <Navbar isBordered maxWidth="full" classNames={{ wrapper: 'px-0' }}>
+      <NavbarContent justify="start">
+        <NavbarBrand className="mr-4">
+          <p className="hidden font-bold text-inherit sm:block">백엔샵</p>
+        </NavbarBrand>
+        <NavbarContent className="gap-3">
+          {categoryLinks.map((category) => {
+            return (
+              <NavbarItem isActive={category.isActive}>
+                <Link href={category.path}>{category.label}</Link>
+              </NavbarItem>
+            );
+          })}
+        </NavbarContent>
+      </NavbarContent>
+
+      <NavbarContent justify="end" className="gap-3">
+        {userLinks.map((userLink) => {
+          return (
+            <NavbarItem>
+              <Link href={userLink.path}>{userLink.label}</Link>
+            </NavbarItem>
+          );
+        })}
+      </NavbarContent>
+    </Navbar>
   );
 }
